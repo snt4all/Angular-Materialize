@@ -1,0 +1,116 @@
+$galleryGap: 6px;
+
+body > div {
+	height: 100%;
+}
+
+h2 {
+	text-align: center;
+}
+
+// fix Angular Material bug:
+.md-toolbar-tools > .md-button:last-child {
+  margin-right: -8px;
+}
+
+md-sidenav .md-button {
+	display: block;
+	margin: 14px auto;
+}
+
+// placeholders for disappearing buttons (to keep layout):
+button.empty {
+	margin: 0 6px;
+	height: 48px;
+	min-width: 0;
+	line-height: 48px;
+	padding-left: 0;
+	padding-right: 0;
+	width: 48px;
+	min-height: 36px;
+	visibility: hidden;
+	
+	&.first {
+		margin-left: -8px;
+	}
+	
+	&.last {
+		margin-right: -8px;
+	}
+}
+
+#container {
+	padding: $galleryGap;
+	
+	#loading {
+		padding-bottom: 15vh;
+	}
+}
+
+#gallery {
+	padding-bottom: 15vh;
+	width: 100%;
+	min-height: 50vh;
+	overflow: hidden;
+}
+
+.item {
+	display: block;
+	width: 100%;
+	
+	@media (min-width: 480px) {
+		width: 1 / 2 * 100%;
+	}
+	
+	@media (min-width: 768px) {
+		width: 1 / 3 * 100%;
+	}
+	
+	@media (min-width: 1200px) {
+		width: 1 / 4 * 100%;
+	}
+	
+	@media (min-width: 1500px) {
+		width: 1 / 5 * 100%;
+	}
+	
+	@media (min-width: 2000px) {
+		width: 1 / 6 * 100%;
+	}
+	
+	> div {
+		margin: $galleryGap;
+		box-shadow: 0 2px 4px -1px rgba( 0, 0, 0, .14 ), 0 4px 5px 0 rgba( 0, 0, 0, .098 ), 0 1px 10px 0 rgba( 0, 0, 0, .084 ); // matches with MD
+	}
+}
+
+.item img {
+	display: block;
+	width: 100%;
+}
+
+.item.new {
+	animation: moveUp 0.65s ease forwards;
+}
+	
+.new1 {
+	@extend .item.new;
+	animation-duration: 0.5s;
+}
+
+.new2 {
+	@extend .item.new;
+	animation-duration: 0.65s;
+}
+
+.new3 {
+	@extend .item.new;
+	animation-duration: 0.8s;
+}
+
+@keyframes moveUp {
+	0%   { transform: translateY( 200px );
+	       opacity: 0; }
+	100% { transform: translateY( 0 );
+	       opacity: 1; }
+}

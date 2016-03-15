@@ -1,0 +1,284 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background-color: #eeeeee;
+  color: #949494;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  z-index:2;
+  background-color: #3f51b5;
+  padding: 1em 3em 1em 3em;
+  color: #FFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+header > .btn {
+  position: absolute;
+  bottom: -2em;
+  right: 2em;
+  font-size: 1.2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: all 1s;
+}
+
+header > .btn.open {
+  -webkit-transform: translate3d(-450%, 0, 0);
+  transform: translate3d(-450%, 0, 0);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: all 1s;
+}
+
+.btn {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  background-color: #FFF;
+  color: #9e9e9e;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 2em;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header .btn > span > span {
+  background-color: #e91e63;
+}
+
+.btn > span {
+  display: block;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+  margin: 1em;
+}
+
+.btn > span > span {
+  display: block;
+  background-color: #9e9e9e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  transition: all 0.5s ease;
+  border: 0px solid transparent;
+}
+
+.btn.menu > span > span {
+  transform: scale(1, 0.2) translate(0, -3em);
+}
+
+.btn.menu > span > span.l2 {
+  transform: scale(1, 0.2) translate(0, 0);
+}
+
+.btn.menu > span > span.l3 {
+  transform: scale(1, 0.2) translate(0, 3em);
+}
+
+.btn.rightArrow > span > span {
+  width: 1.8em;
+  height: 0.4em;
+  transform: translate(0, 0.8em);
+}
+
+.btn.rightArrow > span > span.l2 {
+  transform-origin: 100% 0;
+  width: 1.4em;
+  transform: translate(0.6em, 1em) rotate(45deg);
+}
+
+.btn.rightArrow > span > span.l3 {
+  transform-origin: 100% 100%;
+  width: 1.4em;
+  transform: translate(0.6em, 0.64em) rotate(-45deg);
+}
+
+.drop-round {
+  display: block;
+  position: absolute;
+  background: #CCC;
+  border-radius: 100%;
+  transform: scale(0);
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.drop-round:before {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: #EEE;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+}
+
+.drop-round.animate {
+  animation: drop 1s ease-out;
+}
+
+.drop-round.animate:before {
+  animation: drop2 1s ease-out;
+}
+
+@keyframes drop {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+@keyframes drop2 {
+  30% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+.side-nav {
+  z-index:2;
+  right: 0;
+  position: absolute;
+  width: 300px;
+  background-color: #ffffff;
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  height: 100%;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: all 1s;
+}
+
+.fixed {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 1s;
+}
+
+.pusher {
+  height:100%;
+  width:100%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+.pusher::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+.menu-open .pusher::after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.btn-group {
+  margin-left:100px;
+  margin-top:100px;
+}
+
+.btn-md {
+  width: 10em;
+  display: inline-block;
+  transform: translateZ(0);
+  transition: all 0.5s ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.btn-md-green {
+  background-color: #4caf50 !important;
+}
+
+.btn-md:hover, btn-md:focus, .btn-md:visited  {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  background-color: #2bbbad;
+  outline: 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ng module css */
+.drop {
+  display: block;
+  position: absolute;
+  background: hsl(180, 40%, 80%);
+  border-radius: 100%;
+  transform: scale(0);
+  pointer-events: none;
+  width:200px;
+  height:200px;
+}
+
+.drop.animate {
+  animation: drop 1.5s ease-out;
+}
+
+
+@keyframes drop {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}

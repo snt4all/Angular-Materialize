@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Animated search bar w/ Angular-Material</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+</head>
+<body ng-app="myApp" ng-controller="mainController as main" layout="row">
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left-nav" md-is-locked-open="$mdMedia('gt-md')">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Menu</h2>
+        <span flex></span>
+        <md-button ng-click="main.close()" hide-gt-md aria-label="Close Menu">
+          <ng-md-icon icon="close"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-list>
+        <md-list-item>
+          <md-button>Button</md-button>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+
+  <div flex layout="column" role="main" class="md-whiteframe-z2">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="main.toggleLeft()" hide-gt-md aria-label="Open Menu">
+          <ng-md-icon icon="menu"></ng-md-icon>
+        </md-button>
+        <h2 class="header show">Header</h2>
+        <span flex></span>
+        <form class="search-box">
+          <input class="search-box-input" type="text" required="required">
+          <button type="reset" class="delete"></button>
+        </form>
+      </div>
+    </md-toolbar>
+
+    <div flex layout="column">
+      <!-- Example of what would be inside a view template -->
+      <div flex layout="column" class="md-padding content">
+        <p>Welcome to the homepage!</p>
+      </div><!-- end view -->
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+  <script src="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.5.0/angular-material-icons.min.js"></script>
+</body>
+</html>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

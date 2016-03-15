@@ -1,0 +1,39 @@
+.menu-item {
+  background: none;
+  border-width: 0;
+  cursor: pointer;
+  display: block;
+  color: #333;
+  font-size: inherit;
+  height: 42px;
+  line-height: 42px;
+  max-height: 42px;
+  opacity: 1;
+  margin: 0;
+  outline: none;
+  padding-left: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+  z-index: 1;
+}
+.menu-item > md-svg-icon {
+  margin: auto 8px auto auto;
+}
+.menu-item > md-svg-icon > * {
+  vertical-align: middle;
+}
+
+md-svg-icon.ic_24px svg {
+  width: 24px;
+  height: 24px;
+}
+
+md-svg-icon {
+  margin: 5px auto auto;
+  padding: 0;
+  display: inline-block;
+  background-repeat: no-repeat no-repeat;
+  pointer-events: none;
+}

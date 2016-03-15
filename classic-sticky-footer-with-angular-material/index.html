@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Classic "sticky footer" with angular-material</title>
+          <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-animate.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div ng-app="materialApp" ng-controller="AppCtrl" layout="column" layout-fill>
+    <header>
+        <md-toolbar class='md-medium-tall'>
+          <div class="md-toolbar-tools">
+              <h1>Fixed to Top</h1>
+              <span flex></span>
+              <md-button class="md-raised" ng-click="toggleContent(!displayContent)">toggle content</md-button>
+          </div>
+        </md-toolbar>
+    </header>
+    <main class='md-padding' layout="row" flex>
+        <div flex>
+            <md-card ng-if="displayContent" ng-repeat="card in cards">
+              {{$index}}
+              {{card.title}}
+              {{card.text}}
+            </md-card>
+        </div>
+    </main>
+    <footer>
+        <div layout="row" layout-align="center center">
+            <h2>My Awesome Footer</h2>
+        </div>
+    </footer>
+</div>
+    
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

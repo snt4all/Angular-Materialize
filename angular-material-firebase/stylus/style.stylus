@@ -1,0 +1,46 @@
+*, *::before, *::after
+    box-sizing border-box
+
+body
+    background #E8EAF6
+    position absolute
+    left 50%
+    top 50%
+    transform translate(-50%, -50%)
+
+/* ------------------------- Separate Line ------------------------- */
+
+$color = #3F51B5
+$value = 0px 0px $color
+$length = 100
+
+long-shadow-value($color)
+    for $i in 1..$length
+        $value = $value, unit($i, px) unit($i, px) $color
+    return $value
+
+long-shadow($color)
+    text-shadow long-shadow-value($color)
+
+.md-long-shadow
+    background $color
+    overflow hidden
+    border-bottom 5px solid #ccc
+    border-radius 12px
+    text-align center
+    padding 2em
+    width 25em
+    margin 0 auto
+    > h2
+        color #fff
+        long-shadow(darken($color, 10%))
+
+/* ------------------------- Separate Line ------------------------- */        
+
+$md-theme = #303F9F
+
+.md-theme
+    background $md-theme
+    > h2
+        color #fff
+        long-shadow(darken($md-theme, 15%))

@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+  height: 100%;
+}
+
+p {
+  margin: auto;
+  width: 900px;
+  text-align: left;
+}
+
+md-content {
+  height: 190%;
+}
+
+#mainPic {
+  background: url("http://img.ev.mu/images/paysVol/222/1605x642/222.jpg") center center no-repeat;
+  height: 130px;
+}
+
+#fixSmallNav {
+  box-shadow: 1px 2px 9px black;
+  position: fixed;
+  top: 0;
+}
